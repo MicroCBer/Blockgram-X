@@ -1171,7 +1171,7 @@ public class MessagesController extends ViewController<MessagesController.Argume
       attachButtons.addView(cameraButton);
     }
     attachButtons.addView(mediaButton);
-    attachButtons.addView(recordButton);
+    // attachButtons.addView(recordButton);
     attachButtons.updatePivot();
 
     params = new RelativeLayout.LayoutParams(Screen.dp(55f), Screen.dp(49f));
