@@ -5804,21 +5804,23 @@ public class MediaViewController extends ViewController<MediaViewController.Args
   }
 
   public void onMediaItemClick (MediaView mediaView, float x, float y) {
-    if (inPictureInPicture) {
-      setInPictureInPicture(false);
-      ViewUtils.onClick(contentView);
-      return;
-    }
-    if (mode == MODE_GALLERY && currentSection != SECTION_CAPTION) {
-      return;
-    }
-    boolean clicked = stack.getCurrent().onClick(mediaView, x, y) || toggleHeaderVisibility();
-    if (!clicked && mode == MODE_GALLERY) {
-      clicked = toggleCheck();
-    }
-    if (clicked) {
-      ViewUtils.onClick(mediaView);
-    }
+    close();
+    return;
+    // if (inPictureInPicture) {
+    //   setInPictureInPicture(false);
+    //   ViewUtils.onClick(contentView);
+    //   return;
+    // }
+    // if (mode == MODE_GALLERY && currentSection != SECTION_CAPTION) {
+    //   return;
+    // }
+    // boolean clicked = stack.getCurrent().onClick(mediaView, x, y) || toggleHeaderVisibility();
+    // if (!clicked && mode == MODE_GALLERY) {
+    //   clicked = toggleCheck();
+    // }
+    // if (clicked) {
+    //   ViewUtils.onClick(mediaView);
+    // }
   }
 
   private FiltersState oldFiltersState;

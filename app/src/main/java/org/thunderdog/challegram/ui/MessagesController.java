@@ -5829,7 +5829,7 @@ public class MessagesController extends ViewController<MessagesController.Argume
           chat.id, getMessageThreadId(), selectedMessage.getChatId(), selectedMessage.getId(),
           Td.newSendOptions(obtainSilentMode())
         );
-
+  
         return true;
       }
       return true;
