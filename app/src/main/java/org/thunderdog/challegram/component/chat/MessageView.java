@@ -629,6 +629,11 @@ public class MessageView extends SparseDrawableView implements Destroyable, Draw
     boolean isSent = !msg.isNotSent();
     Object tag = null;
 
+    // +1
+    ids.append(R.id.BlG_Msg_Repeat);
+    strings.append(R.string.BlG_RepeatMessage);
+    icons.append(R.drawable.baseline_repeat_24);
+
     // Promotion
 
     if (msg.isSponsoredMessage()) {
@@ -645,6 +650,7 @@ public class MessageView extends SparseDrawableView implements Destroyable, Draw
         strings.append(R.string.Translate);
         icons.append(R.drawable.baseline_translate_24);
       }
+      
       
       ids.append(R.id.btn_messageSponsorInfo);
       strings.append(R.string.SponsoredInfoMenu);

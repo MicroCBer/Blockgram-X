@@ -5824,6 +5824,13 @@ public class MessagesController extends ViewController<MessagesController.Argume
           tdlib.ui().showStickerSet(this, sticker.sticker.setId, null);
         }
         return true;
+      } else if (id == R.id.BlG_Msg_Repeat) {
+        tdlib.forwardMessage(
+          chat.id, getMessageThreadId(), selectedMessage.getChatId(), selectedMessage.getId(),
+          Td.newSendOptions(obtainSilentMode())
+        );
+
+        return true;
       }
       return true;
     };
