@@ -1160,7 +1160,7 @@ public class MessagesController extends ViewController<MessagesController.Argume
     addThemeInvalidateListener(recordButton);
     recordButton.setLayoutParams(lp);
 
-    attachButtons.addView(commandButton);
+    // attachButtons.addView(commandButton);
     if (silentButton != null) {
       attachButtons.addView(silentButton);
     }
