@@ -1797,7 +1797,8 @@ public class MainController extends ViewPagerController<Void> implements Menu, M
   public void fillMenuItems (int id, HeaderView header, LinearLayout menu) {
     if (id == R.id.menu_main) {
       header.addLockButton(menu);
-      header.addSearchButton(menu, this);
+      header.addSearchButton(menu, this, getSearchHeaderIconColorId());
+      header.addRetryButton(menu, this, getSearchHeaderIconColorId());
     } else if (id == R.id.menu_clear) {
       header.addClearButton(menu, getSearchHeaderIconColorId(), getSearchBackButtonResource());
     } else {
@@ -1807,7 +1808,12 @@ public class MainController extends ViewPagerController<Void> implements Menu, M
 
   @Override
   public void onMenuItemPressed (int id, View view) {
-    if (id == R.id.menu_btn_search) {
+    if (id == R.id.menu_btn_retry) {
+      ArrayList<org.thunderdog.challegram.telegram.TdlibAccount> accounts = tdlib.context().getActiveAccounts();
+      tdlib.context().changePreferredAccountId(
+        accounts.get((accounts.indexOf(tdlib.account()) + 1) % accounts.size()).id
+        , TdlibManager.SWITCH_REASON_USER_CLICK);
+    } else if (id == R.id.menu_btn_search) {
       tdlib.checkDeadlocks(() -> runOnUiThreadOptional(() -> {
         if (isFocused()) {
           openSearchMode();
