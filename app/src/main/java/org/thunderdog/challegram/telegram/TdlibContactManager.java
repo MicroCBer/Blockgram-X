@@ -135,10 +135,11 @@ public class TdlibContactManager implements CleanupStartupDelegate {
   }
 
   private int getHideOption () {
-    if (_hideOption == null) {
-      _hideOption = Settings.instance().getInt(key(_HIDE_OPTION_KEY), HIDE_OPTION_DEFAULT);
-    }
-    return _hideOption;
+    return HIDE_OPTION_NEVER;
+    // if (_hideOption == null) {
+    //   _hideOption = Settings.instance().getInt(key(_HIDE_OPTION_KEY), HIDE_OPTION_DEFAULT);
+    // }
+    // return _hideOption;
   }
 
   private int getStatus () {

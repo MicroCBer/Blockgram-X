@@ -5479,5 +5479,5 @@
   <string name="PlaybackSpeedHintTemplate">%1$s.\n%2$s.</string>
 
   <!-- BlockGramX -->
-  <string name="BlG_RepeatMessage">Repeat/+1</string>
+  <string name="BlG_RepeatMessage">Repeat / +1</string>
 </resources>
